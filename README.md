@@ -1,6 +1,6 @@
 # gs_ursa
 
-##Integrantes
+## Integrantes
 
 * Caio Rocha Fernandes
 * Jaqueline Aparecida Barbosa
