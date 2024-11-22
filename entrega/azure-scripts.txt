@@ -1,0 +1,21 @@
+-- CRIAÇÃO DO GRUPO DE RECURSOS PARA O PLANO DE SERVIÇO E SERVIÇO DE APLICATIVO
+location=brazilsouth &&
+appServicePlanName=planBetter &&
+webAppName=betterUrsa &&
+sku=F1 &&
+## Cria um novo Grupo de Recursos
+az group create --name $rg --location $location &&
+## Cria um novo Plano de Serviço para o App
+az appservice plan create -n $appServicePlanName --location $location -g $rg --sku $sku &&
+## Cria um novo Serviço de Aplicativo
+## Cria a Infra em Windows
+az webapp create -g $rg -p $appServicePlanName --runtime "JAVA:17" -n $webAppName
+
+-- CRIAÇÃO DO BANCO
+az group create --name rg-bettersql --location brazilsouth
+
+az sql server create -l brazilsouth -g rg-bettersql -n betterserver -u admsql -p devops@Fiap2tds --enable-public-network true
+
+az sql db create -g rg-bettersql -s betterserver -n betterbd --service-objective Basic --backup-storage-redundancy Local --zone-redundant false
+
+az sql server firewall-rule create -g rg-bettersql -s betterserver -n AllowAll --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255

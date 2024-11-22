@@ -1,0 +1,13 @@
+variables:
+  ConnectedServiceName: 'a7b60e89-8b33-47f8-a342-c3a747f4fc0b'
+  WebAppKind: 'webApp'
+  WebAppName: 'betterUrsa'
+
+steps:
+- task: AzureRmWebAppDeployment@4
+  displayName: 'Deploy Azure App Service'
+  inputs:
+    azureSubscription: '$(Parameters.ConnectedServiceName)'
+    appType: '$(Parameters.WebAppKind)'
+    WebAppName: '$(Parameters.WebAppName)'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.jar'

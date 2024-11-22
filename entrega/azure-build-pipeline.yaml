@@ -1,0 +1,30 @@
+pool:
+  name: Azure Pipelines
+  demands: maven
+
+variables:
+  mavenPOMFile: 'pom.xml'
+
+steps:
+- task: Maven@3
+  displayName: 'Maven pom.xml'
+  inputs:
+    mavenPomFile: '$(Parameters.mavenPOMFile)'
+    options: '-e '
+    testResultsFiles: '**/surefire-reports/TEST-*.xml '
+    testRunTitle: 'Testes de codigo'
+    jdkVersionOption: 1.17
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/*.jar'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+    CleanTargetFolder: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: app'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+    ArtifactName: app
