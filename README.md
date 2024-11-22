@@ -20,6 +20,7 @@ O que a BETTER oferece?
 Estações de Recarga ao seu alcance: Encontre os pontos de recarga mais próximos de você de forma rápida e fácil.
 Aluguel de Veículos Elétricos: Quer experimentar um veículo elétrico por alguns dias? A BETTER localiza as opções de aluguel disponíveis perto de você.
 Integração com Transporte Público: Oferecemos informações sobre o transporte público movidos a bateria, garantindo uma mobilidade completa e integrada.
-A BETTER não é apenas um aplicativo, é um compromisso com a sustentabilidade. Queremos conectar você a uma nova forma de se locomover, com menos impacto ambiental, otimizando seus trajetos e tornando a mobilidade elétrica mais acessível a todos. Descubra uma maneira melhor de se movimentar, viver e cuidar do planeta.
+A BETTER não é apenas um aplicativo, é um compromisso com a sustentabilidade. 
+Queremos conectar você a uma nova forma de se locomover, com menos impacto ambiental, otimizando seus trajetos e tornando a mobilidade elétrica mais acessível a todos. Descubra uma maneira melhor de se movimentar, viver e cuidar do planeta.
 
 WE HELP YOU FIND A BETTER WAY.
